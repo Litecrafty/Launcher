@@ -1,0 +1,30 @@
+{
+  "name": "litecraft-launcher",
+  "version": "1.0.0",
+  "description": "Electron desktop app for launching the Litecraft client.",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Litecrafty/Launcher.git"
+  },
+  "keywords": [
+    "client",
+    "minecraft",
+    "electron",
+    "fast",
+    "lite",
+    "from-scratch"
+  ],
+  "author": "Litecrafty",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Litecrafty/Launcher/issues"
+  },
+  "homepage": "https://github.com/Litecrafty/Launcher#readme",
+  "dependencies": {
+    "electron": "^1.6.11"
+  }
+}
