@@ -1,0 +1,68 @@
+* {
+  pointer-events: none;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+body {
+  -webkit-app-region: drag;
+  -webkit-user-select: none;
+  margin: 0;
+  background: #2196F3;
+  box-shadow: inset 0 0 1em rgba(0, 0, 0, 0.2);
+}
+
+body:before, body:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+body:before {
+  mix-blend-mode: overlay;
+  z-index: -2;
+  background: linear-gradient(rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25));
+}
+
+body:after {
+  mix-blend-mode: overlay;
+  opacity: 0.05;
+  z-index: -1;
+  background: url("../images/noise.png");
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+  body:after {
+    background-size: 50px 50px;
+  }
+}
+
+.app-title {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  top: 0.5rem;
+  font-size: 0.875em;
+  font-weight: 200;
+  color: white;
+  font-family: "San Francisco", "Helvetica Neue", "Lucida Grande", sans-serif;
+}
+
+.app-title img {
+  width: 1.35em;
+  position: absolute;
+  right: 0.5rem;
+  left: auto;
+}
+
+.app-title .minimize {
+  right: 1.85rem;
+}
