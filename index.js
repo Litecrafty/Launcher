@@ -37,8 +37,7 @@ app.on('ready', () => {
     fullscreen: false,
     background: '#2196F3',
     titleBarStyle: 'hiddenInset',
-    frame: process.platform == 'darwin',
-    autoHideMenuBar: true
+    frame: process.platform == 'darwin'
   });
 
   if (process.platform === 'darwin') {
@@ -58,5 +57,10 @@ app.on('ready', () => {
 
   mainWindow.on('closed', () => {
     mainWindow = null;
+  });
+
+  mainWindow.webContents.on('new-window', (e, url) => {
+    e.preventDefault();
+    electron.shell.openExternal(url);
   });
 });

@@ -1,11 +1,21 @@
-* {
-  pointer-events: none;
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Roboto-Regular.ttf');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'Minecraft';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/default.ttf');
 }
 
 html, body {
   height: 100%;
   overflow: hidden;
-  pointer-events: auto;
 }
 
 body {
@@ -48,21 +58,27 @@ body:after {
 .app-title {
   width: 100%;
   position: absolute;
-  text-align: center;
+  text-align: right;
   top: 0.5rem;
+}
+
+.app-title p {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  padding-top: 0;
+  margin-top: 0;
   font-size: 0.875em;
   font-weight: 200;
   color: white;
-  font-family: "San Francisco", "Helvetica Neue", "Lucida Grande", sans-serif;
+  font-family: 'Minecraft', 'Roboto', 'San Francisco', 'Helvetica Neue', 'Lucida Grande', sans-serif;;
+  z-index: -1;
 }
 
-.app-title img {
-  width: 1.35em;
-  position: absolute;
-  right: 0.5rem;
+.app-title a img {
+  -webkit-app-region: no-drag;
+  width: 1.25em;
+  margin-right: 0.5rem;
   left: auto;
-}
-
-.app-title .minimize {
-  right: 1.85rem;
 }
