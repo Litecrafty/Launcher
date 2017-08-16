@@ -27,6 +27,7 @@
   "homepage": "https://github.com/Litecrafty/Launcher#readme",
   "dependencies": {
     "electron": "^1.6.11",
-    "electron-config": "^1.0.0"
+    "electron-config": "^1.0.0",
+    "yggdrasil": "^1.1.0"
   }
 }

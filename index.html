@@ -2,19 +2,30 @@
 <html>
 <head>
   <link rel="stylesheet" href="resources/css/index.css">
+  <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+  <script src="resources/js/jquery-3.2.1.min.js"></script>
+
+  <script>if (window.module) module = window.module;</script>
   <script type="text/javascript" src="resources/js/index.js"></script>
 </head>
 <body>
   <div class="app-title">
-    <!--<img src="resources/images/minimize.svg">-->
-    <!--<img src="resources/images/close.svg">-->
     <a id="minimize" href="javascript:void(0);" target="_blank"><i class="material-icons md-18 md-light">remove</i></a>
     <a id="close" href="javascript:void(0);" target="_blank"><i class="material-icons md-18 md-light">close</i></a>
     <p class="md-18">Litecraft</p>
   </div>
   <div class="language">
-    <a href="javascript:void(0);" target="_blank"><i class="material-icons md-18 md-light">language</i> Español - España</a>
-    <a href="javascript:void(0);" class="right" target="_blank">Ayuda</a>
+    <div class="dropdown">
+      <a class="dropbtn" href="javascript:dropdownList();" target="_blank"><i class="material-icons md-18">language</i> Español - España</a>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#" onclick="change_lang()">English (US)</a>
+        <a href="#" onclick="change_lang()">Español - España</a>
+        <a href="#" onclick="change_lang()">ESS</a>
+      </div>
+    </div>
+    <!--<a href="javascript:void(0);" target="_blank"><i class="material-icons md-18 md-light">language</i> Español - España</a>-->
+    <a href="javascript:void(0);" class="right" target="_blank" data-translate="help"></a>
   </div>
   <div class="footer">
     <p id="version"></p>

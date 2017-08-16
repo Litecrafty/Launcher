@@ -1,5 +1,8 @@
+'use strict';
+
 const electron = require('electron');
 const {app, BrowserWindow} = electron;
+const ygg = require('yggdrasil')({});
 
 let mainWindow;
 
@@ -44,8 +47,6 @@ app.on('ready', () => {
     mainWindow.setSheetOffset(40);
   }
 
-  mainWindow.loadURL('file://' + __dirname + '/index.html');
-
   mainWindow.on('enter-full-screen', e => {
     e.preventDefault();
   });
@@ -62,5 +63,13 @@ app.on('ready', () => {
   mainWindow.webContents.on('new-window', (e, url) => {
     e.preventDefault();
     electron.shell.openExternal(url);
+  });
+
+  mainWindow.loadURL('file://' + __dirname + '/index.html');
+
+  ygg.validate('token', function(err){
+    if (err) {
+      mainWindow.loadURL('file://' + __dirname + '/login.html');
+    }
   });
 });
