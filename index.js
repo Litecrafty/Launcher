@@ -1,7 +1,7 @@
 'use strict';
 
 const electron = require('electron');
-const ygg = require('yggdrasil')({});
+const ygg = require('litecraft-yggdrasil')({});
 
 require('electron-pug')({
     pretty: true
@@ -74,9 +74,10 @@ app.on('ready', () => {
         electron.shell.openExternal(url);
     });
 
-    ygg.validate('token', function(err) {
-        if (err) {
+    ygg.validate('holaraul', function(valid) {
+        if (!valid) {
             mainWindow.loadURL('file://' + __dirname + '/views/login.pug');
+            console.log(err);
         } else {
             mainWindow.loadURL('file://' + __dirname + '/views/index.pug');
         }

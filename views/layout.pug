@@ -3,11 +3,11 @@ html
   head
     link(rel='stylesheet', href='../resources/css/index.css')
     meta(charset='UTF-8')
-    script(src='resources/js/jquery-3.2.1.min.js')
+    script(src='../resources/js/jquery-3.2.1.min.js')
     script.
       if (typeof module === 'object') {window.module = module; module = undefined;}
       if (window.module) module = window.module;
-    script(type='text/javascript', src='resources/js/index.js')
+    script(type='text/javascript', src='../resources/js/index.js')
   body
     .app-title
       a#minimize(href='javascript:void(0);', target='_blank')
@@ -32,4 +32,5 @@ html
 
       block main
     .footer
+      block footer
       p#version
