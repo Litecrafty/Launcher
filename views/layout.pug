@@ -2,7 +2,8 @@ doctype html
 html
   head
     link(rel='stylesheet', href='resources/css/index.css')
-      script(src='resources/js/jquery-3.2.1.min.js')
+    meta(charset='UTF-8')
+    script(src='resources/js/jquery-3.2.1.min.js')
     script.
       if (typeof module === 'object') {window.module = module; module = undefined;}
       if (window.module) module = window.module;
@@ -28,7 +29,7 @@ html
       //    |  Español - España
 
       a.right(href='javascript:void(0);', target='_blank', data-translate='help')
-      
+
       block main
     .footer
       p#version
