@@ -1,11 +1,13 @@
 'use strict'
 
 const electron = require('electron')
+const config = require('./config.js')
 const ygg = require('litecraft-yggdrasil')({})
 
 require('electron-pug')({
 	pretty: true
 })
+
 require('electron-reload')(__dirname, {
 	electron: require('${__dirname}/../../node_modules/electron')
 })
@@ -32,7 +34,7 @@ if (isAlreadyRunning) {
 }
 
 app.on('window-all-closed', () => {
-	if (process.platform != 'darwin') {
+	if (process.platform !== 'darwin') {
 		app.quit()
 	}
 })
@@ -51,10 +53,10 @@ app.on('ready', () => {
 		fullscreen: false,
 		background: '#2196F3',
 		titleBarStyle: 'hiddenInset',
-		frame: process.platform == 'darwin'
+		frame: process.platform === 'darwin'
 	})
 
-	mainWindow.loadURL('file://' + __dirname + '/views/main.pug')
+	mainWindow.loadURL('file://' + __dirname + '/views/index.pug')
 
 	if (process.platform === 'darwin') {
 		mainWindow.setSheetOffset(40)
@@ -77,27 +79,4 @@ app.on('ready', () => {
 		e.preventDefault()
 		electron.shell.openExternal(url)
 	})
-
-	checkInternet(function(isConnected) {
-		if (isConnected) {
-			ygg.validate('holaraul', function(valid) {
-				if (!valid) {
-					mainWindow.loadURL('file://' + __dirname + '/views/login.pug')
-					console.log(valid)
-				}
-			})
-		} else {
-			console.log('Offline!')
-		}
-	})
 })
-
-function checkInternet(cb) {
-	require('dns').lookup('google.com', function(err) {
-		if (err && err.code == 'ENOTFOUND') {
-			cb(false)
-		} else {
-			cb(true)
-		}
-	})
-}

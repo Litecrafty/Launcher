@@ -1,37 +1,19 @@
-doctype html
-html
-  head
-    link(rel='stylesheet', href='../resources/css/index.css')
-    meta(charset='UTF-8')
-    script.
-      if (typeof module === 'object') {window.module = module; module = undefined;}
-    script(src='../resources/js/jquery-3.2.1.min.js')
-    script.
-      if (window.module) module = window.module;
-    script(type='text/javascript', src='../resources/js/index.js')
-  body
-    .app-title
-      a#minimize(href='javascript:void(0);', target='_blank')
-        i.material-icons.md-18.md-light remove
-      a#close(href='javascript:void(0);', target='_blank')
-        i.material-icons.md-18.md-light close
-      p.md-18 Litecraft
-    .language
-      .dropdown
-        a.dropbtn(href='javascript:dropdownList();', target='_blank')
-          i.material-icons.md-18 language
-          |  Español - España
-        #myDropdown.dropdown-content
-          a(href='#', onclick='change_lang()') English (US)
-          a(href='#', onclick='change_lang()') Español - España
-          a(href='#', onclick='change_lang()') ESS
-      //  a(href='javascript:void(0);', target='_blank')
-      //    i.material-icons.md-18.md-light language
-      //    |  Español - España
+.language
+  .dropdown
+    a#language-btn.dropbtn(href='javascript:void(0)', target='_blank')
+      i.material-icons.md-18 language
+      |  Español - España
+    #myDropdown.dropdown-content
+      a(href='javascript:void(0)', target='_blank' data-language='en-US') English - US
+      a(href='javascript:void(0)', target='_blank' data-language='en-PI') Pirate Speak - The Seven Seas
+      a(href='javascript:void(0)', target='_blank' data-language='es-ES') Español - España
+  //  a(href='javascript:void(0)', target='_blank')
+  //    i.material-icons.md-18.md-light language
+  //    |  Español - España
 
-      a.right(href='javascript:void(0);', target='_blank', data-translate='help')
+  a.right(href='javascript:void(0)', target='_blank', data-translate='help')
 
-      block main
-    .footer
-      block footer
-      p#version
+  block main
+.footer
+  block footer
+  p#version

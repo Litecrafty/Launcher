@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Litecrafty/Launcher.git"
+    "url": "git+https://github.com/raulsmartin/Launcher.git"
   },
   "keywords": [
     "client",
@@ -19,17 +19,18 @@
     "lite",
     "from-scratch"
   ],
-  "author": "Litecrafty",
+  "author": "raulsmartin",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/Litecrafty/Launcher/issues"
+    "url": "https://github.com/raulsmartin/Launcher/issues"
   },
-  "homepage": "https://github.com/Litecrafty/Launcher#readme",
+  "homepage": "https://github.com/raulsmartin/Launcher#readme",
   "dependencies": {
     "electron": "^1.6.11",
     "electron-config": "^1.0.0",
     "electron-pug": "^1.5.1",
     "electron-reload": "^1.2.1",
+    "eslint": "^4.5.0",
     "litecraft-yggdrasil": "^2.0.2"
   }
 }
