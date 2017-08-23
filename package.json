@@ -30,6 +30,7 @@
     "electron-config": "^1.0.0",
     "electron-pug": "^1.5.1",
     "eslint": "^4.5.0",
+    "jquery": "^3.2.1",
     "litecraft-yggdrasil": "^2.0.2"
   }
 }

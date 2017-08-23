@@ -1,6 +1,7 @@
 'use strict'
 
 const electron = require('electron')
+const $ = require('jquery')
 
 require('electron-pug')({
 	pretty: true
@@ -52,6 +53,8 @@ app.on('ready', () => {
 			experimentalFeatures: true
 		}
 	})
+
+    mainWindow.$ = $
 
 	mainWindow.loadURL('file://' + __dirname + '/views/index.pug')
 

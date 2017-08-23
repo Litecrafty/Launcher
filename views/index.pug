@@ -1,24 +1,16 @@
 doctype html
 html
-	head
-		link(rel='stylesheet', href='../resources/css/index.css')
-		meta(charset='UTF-8')
-		script.
-			if (typeof module === 'object') {
-				window.module = module;
-				module = undefined;
-			}
-		script(src='../resources/js/jquery-3.2.1.min.js')
-		script.
-			if (window.module) module = window.module;
-		script(type='text/javascript', src='../resources/js/index.js')
-	body
-		.app-title
-			a#minimize(href='javascript:void(0)', target='_blank')
-				i.material-icons.md-18.md-light remove
-			a#close(href='javascript:void(0);', target='_blank')
-				i.material-icons.md-18.md-light close
-			p.md-18 Litecraft
-		.content
-			.center
-				img.loading(width='150px', height='150px', src='../resources/images/loading.apng')
+    head
+        link(rel='stylesheet', href='../resources/css/index.css')
+        meta(charset='UTF-8')
+        script(type='text/javascript', src='../resources/js/index.js')
+    body
+        .app-title
+            a#minimize(href='javascript:void(0)', target='_blank')
+                i.material-icons.md-18.md-light remove
+            a#close(href='javascript:void(0);', target='_blank')
+                i.material-icons.md-18.md-light close
+            p.md-18 Litecraft
+        .content
+            .center
+                img.loading(width='150px', height='150px', src='../resources/images/loading.apng')

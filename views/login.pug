@@ -1,3 +1,8 @@
 .content
-  include layout
-  p Please login :v
+    include layout
+    .login-page
+        .form
+            form.login-form
+                input(placeholder="username")
+                input(type="password", placeholder="password")
+                button login
