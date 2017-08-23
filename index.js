@@ -47,7 +47,10 @@ app.on('ready', () => {
 		fullscreen: false,
 		background: '#2196F3',
 		titleBarStyle: 'hiddenInset',
-		frame: process.platform === 'darwin'
+		frame: process.platform === 'darwin',
+		webPreferences: {
+			experimentalFeatures: true
+		}
 	})
 
 	mainWindow.loadURL('file://' + __dirname + '/views/index.pug')

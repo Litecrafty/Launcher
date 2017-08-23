@@ -200,8 +200,8 @@ body::after {
 }
 
 .center {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     position: absolute;
     top: 0;
     bottom: 0;
