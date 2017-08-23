@@ -29,7 +29,6 @@
     "electron": "^1.6.11",
     "electron-config": "^1.0.0",
     "electron-pug": "^1.5.1",
-    "electron-reload": "^1.2.1",
     "eslint": "^4.5.0",
     "litecraft-yggdrasil": "^2.0.2"
   }

@@ -1,15 +1,9 @@
 'use strict'
 
 const electron = require('electron')
-const config = require('./config.js')
-const ygg = require('litecraft-yggdrasil')({})
 
 require('electron-pug')({
 	pretty: true
-})
-
-require('electron-reload')(__dirname, {
-	electron: require('${__dirname}/../../node_modules/electron')
 })
 
 const {
