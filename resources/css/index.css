@@ -225,7 +225,7 @@ img.logo {
     vertical-align: middle;
 }
 
-.content {
+.content, .content-data {
     height: 100%;
 }
 

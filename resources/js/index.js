@@ -73,7 +73,7 @@ window.onload = function () {
 
     function requestContent(file) {
         history.pushState(null, null, file)
-        $('.content').load(file + ' .content').triggerHandler('contentChanged')
+        $('.content').load(file + ' .content-data').triggerHandler('contentChanged')
 
         window.setTimeout(function () {
             if (document.getElementById('version')) {

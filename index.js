@@ -42,7 +42,10 @@ app.on('ready', () => {
         height: 600,
         minWidth: 500,
         minHeight: 600,
+        maxWidth: 500,
+        maxHeight: 600,
         fullscreen: false,
+        resizable: false,
         backgroundColor: '#2196F3',
         titleBarStyle: 'hiddenInset',
         frame: process.platform === 'darwin'
