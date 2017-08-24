@@ -47,8 +47,7 @@ app.on('ready', () => {
         fullscreen: false,
         resizable: false,
         backgroundColor: '#2196F3',
-        titleBarStyle: 'hiddenInset',
-        frame: process.platform === 'darwin'
+        frame: false
     })
 
     mainWindow.$ = $
@@ -56,8 +55,7 @@ app.on('ready', () => {
     mainWindow.loadURL('file://' + __dirname + '/views/index.pug')
 
     if (process.platform === 'darwin') {
-        mainWindow.setSheetOffset(document.getElementById('toolbar').getBoundingClientRect().height)
-        //mainWindow.setSheetOffset(40)
+        mainWindow.setSheetOffset(30)
     }
 
     mainWindow.on('enter-full-screen', e => {
