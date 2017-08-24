@@ -72,7 +72,7 @@ body::after {
     text-align: center;
     top: 0;
     margin-top: 0;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
     color: white;
     z-index: -1;
@@ -80,8 +80,8 @@ body::after {
 
 .app-title a .material-icons {
     -webkit-app-region: no-drag;
-    margin-right: 3px;
-    margin-top: 3px;
+    margin-right: 6px;
+    margin-top: 6px;
 }
 
 .right {
@@ -104,9 +104,7 @@ body::after {
 }
 
 .language a .material-icons {
-    vertical-align: middle;
-    line-height: 30px;
-    padding-bottom: 5px;
+    vertical-align: text-bottom;
 }
 
 .footer {
@@ -218,6 +216,81 @@ body::after {
 
 .show {
     display: block;
+}
+
+p.logo {
+    color: white;
+    width: auto;
+    font-size: 20px;
+    font-weight: 700;
+    position: fixed;
+    right: 6px;
+    bottom: 3px;
+}
+
+img.logo {
+    position: fixed;
+    right: 87px;
+    bottom: 6px;
+    vertical-align: middle;
+}
+
+.login-page {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+}
+
+.form {
+    position: relative;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 16px 35px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.form input {
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.form button {
+    text-transform: uppercase;
+    outline: 0;
+    background: #4CAF50;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.form button:hover, .form button:active, .form button:focus {
+    background: #43A047;
+}
+
+.form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+}
+
+.form .message a {
+    color: #4CAF50;
+    text-decoration: none;
 }
 
 .material-icons {

@@ -51,6 +51,12 @@ window.onclick = function (event) {
 }
 
 window.onload = function () {
+    if (document.getElementById('version')) {
+        document.getElementById('version').innerHTML = remote.app.getVersion()
+        document.getElementById('language-btn').addEventListener('click', function () {
+            dropdownList()
+        })
+    }
     document.getElementById('minimize').addEventListener('click', function () {
         remote.getCurrentWindow().minimize()
     })
@@ -60,6 +66,7 @@ window.onload = function () {
     })
 
     function requestContent(file) {
+        history.pushState(null, null, file)
         $('.content').load(file + ' .content').triggerHandler('contentChanged')
     }
 
@@ -69,22 +76,18 @@ window.onload = function () {
             if (isConnected) {
                 ygg.validate(config.get('accessToken'), function (valid) {
                     if (!valid) {
-                        history.pushState(null, null, 'login.pug')
                         requestContent('login.pug')
                     } else {
-                        history.pushState(null, null, 'main.pug')
                         requestContent('main.pug')
                     }
                     console.log(valid)
                 })
             } else {
-                history.pushState(null, null, 'main.pug')
                 requestContent('main.pug')
                 console.log('Offline!')
             }
         })
     } else {
-        history.pushState(null, null, 'login.pug')
         requestContent('login.pug')
     }
 
@@ -98,6 +101,15 @@ window.onload = function () {
         })
     }
 
+    window.setTimeout(function () {
+        if (document.getElementById('version')) {
+            document.getElementById('version').innerHTML = remote.app.getVersion()
+            document.getElementById('language-btn').addEventListener('click', function () {
+                dropdownList()
+            })
+        }
+        translate()
+    }, 200)
     $('.content').bind('contentChanged', function () {
         if ($('.content').length > 0) {
             window.setTimeout(function () {
@@ -113,3 +125,7 @@ window.onload = function () {
     })
     translate()
 }
+
+/*window.onbeforeunload = function() {
+    remote.getCurrentWindow().close()
+}*/

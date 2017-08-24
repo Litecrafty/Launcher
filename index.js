@@ -79,4 +79,9 @@ app.on('ready', () => {
         e.preventDefault()
         electron.shell.openExternal(url)
     })
+
+    mainWindow.webContents.on('will-navigate', (e, url) => {
+        e.preventDefault()
+        electron.shell.openExternal(url)
+    })
 })
