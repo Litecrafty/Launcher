@@ -36,7 +36,6 @@ function dropdownList() {
     }
 }
 
-// Close the dropdown menu if the user clicks outside of it
 window.onclick = function (event) {
     if (!event.target.matches('.abutton')) {
         let dropdowns = document.getElementsByClassName('dropdown-content')
@@ -51,6 +50,19 @@ window.onclick = function (event) {
 }
 
 window.onload = function () {
+    $('.content').bind('contentChanged', function () {
+        if ($('.content').length > 0) {
+            window.setTimeout(function () {
+                if (document.getElementById('version')) {
+                    document.getElementById('version').innerHTML = remote.app.getVersion()
+                    document.getElementById('language-btn').addEventListener('click', function () {
+                        dropdownList()
+                    })
+                }
+                translate()
+            }, 478)
+        }
+    })
     if (document.getElementById('version')) {
         document.getElementById('version').innerHTML = remote.app.getVersion()
         document.getElementById('language-btn').addEventListener('click', function () {
@@ -68,11 +80,21 @@ window.onload = function () {
     function requestContent(file) {
         history.pushState(null, null, file)
         $('.content').load(file + ' .content').triggerHandler('contentChanged')
+
+        window.setTimeout(function () {
+            if (document.getElementById('version')) {
+                document.getElementById('version').innerHTML = remote.app.getVersion()
+                document.getElementById('language-btn').addEventListener('click', function () {
+                    dropdownList()
+                })
+            }
+            translate()
+        }, 47)
     }
 
-    if (config.get('accessToken')) {
-        console.log('accessToken found!')
-        checkInternet(function (isConnected) {
+    checkInternet(function (isConnected) {
+        if (config.get('accessToken')) {
+            console.log('accessToken found!')
             if (isConnected) {
                 ygg.validate(config.get('accessToken'), function (valid) {
                     if (!valid) {
@@ -86,10 +108,11 @@ window.onload = function () {
                 requestContent('main.pug')
                 console.log('Offline!')
             }
-        })
-    } else {
-        requestContent('login.pug')
-    }
+        } else {
+            console.log('No accessToken found, returning to login screen')
+            requestContent('login.pug')
+        }
+    })
 
     function checkInternet(cb) {
         require('dns').lookup('google.com', function (err) {
@@ -100,32 +123,11 @@ window.onload = function () {
             }
         })
     }
-
-    window.setTimeout(function () {
-        if (document.getElementById('version')) {
-            document.getElementById('version').innerHTML = remote.app.getVersion()
-            document.getElementById('language-btn').addEventListener('click', function () {
-                dropdownList()
-            })
-        }
-        translate()
-    }, 200)
-    $('.content').bind('contentChanged', function () {
-        if ($('.content').length > 0) {
-            window.setTimeout(function () {
-                if (document.getElementById('version')) {
-                    document.getElementById('version').innerHTML = remote.app.getVersion()
-                    document.getElementById('language-btn').addEventListener('click', function () {
-                        dropdownList()
-                    })
-                }
-                translate()
-            }, 47)
-        }
-    })
     translate()
 }
 
-/*window.onbeforeunload = function() {
+window.onbeforeunload = (e) => {
+    e.returnValue = false
+    remote.app.relaunch()
     remote.getCurrentWindow().close()
-}*/
+}

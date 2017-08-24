@@ -42,16 +42,10 @@ app.on('ready', () => {
         height: 600,
         minWidth: 500,
         minHeight: 600,
-        maxWidth: 500,
-        maxHeight: 600,
-        resizable: false,
         fullscreen: false,
-        background: '#2196F3',
+        backgroundColor: '#2196F3',
         titleBarStyle: 'hiddenInset',
-        frame: process.platform === 'darwin',
-        webPreferences: {
-            experimentalFeatures: true
-        }
+        frame: process.platform === 'darwin'
     })
 
     mainWindow.$ = $
@@ -59,7 +53,8 @@ app.on('ready', () => {
     mainWindow.loadURL('file://' + __dirname + '/views/index.pug')
 
     if (process.platform === 'darwin') {
-        mainWindow.setSheetOffset(40)
+        mainWindow.setSheetOffset(document.getElementById('toolbar').getBoundingClientRect().height)
+        //mainWindow.setSheetOffset(40)
     }
 
     mainWindow.on('enter-full-screen', e => {
@@ -73,6 +68,10 @@ app.on('ready', () => {
 
     mainWindow.on('closed', () => {
         mainWindow = null
+    })
+
+    mainWindow.on('close', () => {
+        app.exit(0)
     })
 
     mainWindow.webContents.on('new-window', (e, url) => {

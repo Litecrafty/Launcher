@@ -143,17 +143,7 @@ body::after {
     color: lightgray;
 }
 
-.abutton:focus {
-    color: black;
-    background-color: white;
-}
-
-#language-btn:focus {
-    color: lightgray;
-    background-color: transparent;
-}
-
-#language-btn.active {
+.abutton.active {
     color: black;
     background-color: white;
 }
@@ -235,10 +225,19 @@ img.logo {
     vertical-align: middle;
 }
 
+.content {
+    height: 100%;
+}
+
 .login-page {
-    width: 360px;
+    /*width: 360px;
     padding: 8% 0 0;
-    margin: auto;
+    margin: auto;*/
+    position: relative;
+    float: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -249,7 +248,7 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     background: #FFFFFF;
     max-width: 360px;
-    margin: 0 auto 100px;
+    margin: 0 auto 150px;
     padding: 16px 35px;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
