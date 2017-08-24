@@ -60,15 +60,9 @@ window.onload = function () {
                     })
                 }
                 translate()
-            }, 478)
+            }, 185)
         }
     })
-    if (document.getElementById('version')) {
-        document.getElementById('version').innerHTML = remote.app.getVersion()
-        document.getElementById('language-btn').addEventListener('click', function () {
-            dropdownList()
-        })
-    }
     document.getElementById('minimize').addEventListener('click', function () {
         remote.getCurrentWindow().minimize()
     })
