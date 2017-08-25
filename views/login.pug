@@ -1,16 +1,16 @@
-include top
-.content
-    .content-data
-        link(rel='stylesheet', href='../resources/css/login.css')
-        include layout
-        .login-page
-            .form
-                h1 Log In
-                h3 Use your Mojang account to log in
-                form.login-form
-                    input(type="email", placeholder="email")
-                    input(type="password", placeholder="password")
-                    button(onclick="return false") login
-                    p.message
-                        | Don't have an account?
-                        a(href="https://minecraft.net/store/minecraft/#register")  Register one here!
+extends layout
+
+block content
+    .login-page
+        .form
+            h1 Log In
+            h3 Use your Mojang account to log in
+            form.login-form
+                input#user(type="email", placeholder="Mojang account email")
+                input#password(type="password", placeholder="Password")
+                button login
+                p.message
+                    | Don't have an account?
+                    a(href="https://minecraft.net/store/minecraft/#register")  Register one here!
+block css
+    link(rel='stylesheet', href='../resources/css/login.css')

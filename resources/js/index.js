@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 const $ = require('jquery')
 const {remote} = require('electron')
 const config = require('../config.js')
@@ -85,6 +87,29 @@ window.onload = function () {
             translate()
         }, 47)
     }
+
+    $('.login-form').submit(function () {
+        let user = $('#user')
+        let password = $('#password')
+
+        user.prop('disabled', true)
+        password.prop('disabled', true)
+
+        ygg.auth({
+            user: user.val(),
+            pass: password.val()
+        }, function(err, data){
+            user.prop('disabled', false)
+            password.prop('disabled', false)
+
+            if (err) {
+                console.log(err)
+                return
+            }
+            requestContent('main.pug')
+            config.set('accessToken', data)
+        })
+    })
 
     checkInternet(function (isConnected) {
         if (config.get('accessToken')) {
