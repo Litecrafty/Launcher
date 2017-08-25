@@ -83,6 +83,7 @@ window.onload = function () {
             if (isConnected) {
                 ygg.validate(config.get('accessToken'), function (valid) {
                     if (!valid) {
+                        config.delete('accessToken')
                         requestContent('login.pug')
                     } else {
                         requestContent('main.pug')
@@ -137,12 +138,16 @@ window.onload = function () {
                 return
             }
             requestContent('main.pug')
-            config.set('accessToken', data)
+            config.set('accessToken', data.accessToken)
+            config.set('clientToken', data.clientToken)
+
+            config.set('availableProfiles', data.availableProfiles)
+            config.set('selectedProfile', data.selectedProfile)
         })
     }
 
     function checkInternet(cb) {
-        require('dns').lookup('google.com', function (err) {
+        require('dns').lookup('minecraft.net', function (err) {
             if (err && err.code === 'ENOTFOUND') {
                 cb(false)
             } else {
