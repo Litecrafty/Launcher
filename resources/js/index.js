@@ -30,11 +30,13 @@ function translate() {
 }
 
 function dropdownList() {
-    document.getElementById('languageDropdown').classList.toggle('show')
-    if (document.getElementById('languageDropdown').classList.contains('show')) {
-        document.getElementById('language-btn').classList.add('active')
-    } else {
-        document.getElementById('language-btn').classList.remove('active')
+    if (document.getElementById('languageDropdown')) {
+        document.getElementById('languageDropdown').classList.toggle('show')
+        if (document.getElementById('languageDropdown').classList.contains('show')) {
+            document.getElementById('language-btn').classList.add('active')
+        } else {
+            document.getElementById('language-btn').classList.remove('active')
+        }
     }
 }
 
@@ -55,60 +57,24 @@ window.onload = function () {
     $('.content').bind('contentChanged', function () {
         if ($('.content').length > 0) {
             window.setTimeout(function () {
-                if (document.getElementById('version')) {
-                    document.getElementById('version').innerHTML = remote.app.getVersion()
-                    document.getElementById('language-btn').addEventListener('click', function () {
-                        dropdownList()
-                    })
-                }
+                $('#version').text(remote.app.getVersion())
+
                 translate()
             }, 185)
         }
     })
+
+    // Register 'future' events
+    let body = $('body')
+    body.on('click', '#version', dropdownList)
+    body.on('submit', '#login-form', doLogin)
+
     document.getElementById('minimize').addEventListener('click', function () {
         remote.getCurrentWindow().minimize()
     })
 
     document.getElementById('close').addEventListener('click', function () {
         remote.getCurrentWindow().close()
-    })
-
-    function requestContent(file) {
-        history.pushState(null, null, file)
-        $('.content').load(file + ' .content-data').triggerHandler('contentChanged')
-
-        window.setTimeout(function () {
-            if (document.getElementById('version')) {
-                document.getElementById('version').innerHTML = remote.app.getVersion()
-                document.getElementById('language-btn').addEventListener('click', function () {
-                    dropdownList()
-                })
-            }
-            translate()
-        }, 47)
-    }
-
-    $('.login-form').submit(function () {
-        let user = $('#user')
-        let password = $('#password')
-
-        user.prop('disabled', true)
-        password.prop('disabled', true)
-
-        ygg.auth({
-            user: user.val(),
-            pass: password.val()
-        }, function(err, data){
-            user.prop('disabled', false)
-            password.prop('disabled', false)
-
-            if (err) {
-                console.log(err)
-                return
-            }
-            requestContent('main.pug')
-            config.set('accessToken', data)
-        })
     })
 
     checkInternet(function (isConnected) {
@@ -133,6 +99,48 @@ window.onload = function () {
         }
     })
 
+    function requestContent(file) {
+        history.pushState(null, null, file)
+        $('.content').load(file + ' .content-data').triggerHandler('contentChanged')
+
+        window.setTimeout(function () {
+            if (document.getElementById('version')) {
+                document.getElementById('version').innerHTML = remote.app.getVersion()
+                document.getElementById('language-btn').addEventListener('click', function () {
+                    dropdownList()
+                })
+            }
+            translate()
+        }, 47)
+    }
+
+    function doLogin(event) {
+        event.preventDefault()
+
+        console.log('Trying to login...')
+
+        let user = $('#user')
+        let password = $('#password')
+
+        user.prop('disabled', true)
+        password.prop('disabled', true)
+
+        ygg.auth({
+            user: user.val(),
+            pass: password.val()
+        }, function (err, data) {
+            user.prop('disabled', false)
+            password.prop('disabled', false)
+
+            if (err) {
+                console.log(err)
+                return
+            }
+            requestContent('main.pug')
+            config.set('accessToken', data)
+        })
+    }
+
     function checkInternet(cb) {
         require('dns').lookup('google.com', function (err) {
             if (err && err.code === 'ENOTFOUND') {
@@ -142,6 +150,7 @@ window.onload = function () {
             }
         })
     }
+
     translate()
 }
 
