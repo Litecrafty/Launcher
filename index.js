@@ -5,6 +5,8 @@ const $ = require('jquery')
 
 require('electron-pug')({
     pretty: true
+}, {
+    config: require('./config')
 })
 
 const {
