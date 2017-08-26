@@ -135,10 +135,6 @@ body::after {
     height: 30px;
 }
 
-#language-btn {
-    width: 250px;
-}
-
 .abutton:hover {
     color: lightgray;
 }
@@ -148,34 +144,31 @@ body::after {
     background-color: white;
 }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-    height: 30px;
-}
-
 .dropdown-content {
     position: absolute;
-    top: 30px;
+    top: 60px;
     display: none;
     background-color: white;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
+}
+
+#languageDropdown.dropdown-content {
     overflow-y: scroll;
     height: 245px;
 }
 
-.dropdown-content::-webkit-scrollbar-track {
+#languageDropdown.dropdown-content::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
     background-color: #F5F5F5;
 }
 
-.dropdown-content::-webkit-scrollbar {
+#languageDropdown.dropdown-content::-webkit-scrollbar {
     width: 5px;
     background-color: #F5F5F5;
 }
 
-.dropdown-content::-webkit-scrollbar-thumb {
+#languageDropdown.dropdown-content::-webkit-scrollbar-thumb {
     background-color: #000000;
 }
 
@@ -185,12 +178,23 @@ body::after {
     text-decoration: none;
     display: block;
     font-size: 14px;
-    width: 245px;
+}
+
+#languageDropdown.dropdown-content a {
+    width: 210px;
+}
+
+#profileDropdown.dropdown-content a {
+    width: 85px;
 }
 
 .dropdown-content a:hover {
     background-color: black;
     color: white;
+}
+
+#profileDropdown.dropdown-content {
+    right: 0;
 }
 
 .center {
@@ -205,7 +209,7 @@ body::after {
 }
 
 .show {
-    display: block;
+    display: block !important;
 }
 
 p.logo {

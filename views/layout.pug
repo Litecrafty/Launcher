@@ -4,7 +4,6 @@ html
         link(rel='stylesheet', href='../resources/css/index.css')
         meta(charset='UTF-8')
         script(type='text/javascript', src='../resources/js/index.js')
-        block css
     body
         .app-title#toolbar
             a#minimize(href='javascript:void(0)', target='_blank')
@@ -14,32 +13,29 @@ html
             p.md-18 Litecraft
         .content
             .content-data
+                block css
                 block content
                     .language
-                        .dropdown
-                            a#language-btn.abutton(href='javascript:void(0)', target='_blank')
-                                i.material-icons.md-18 language
-                                |  Español - España
-                            #languageDropdown.dropdown-content
-                                a(href='javascript:void(0)', target='_blank' data-language='en-US') English - US
-                                a(href='javascript:void(0)', target='_blank' data-language='en-PI') Pirate Speak - The Seven Seas
-                                a(href='javascript:void(0)', target='_blank' data-language='es-ES') Español - España
-                        //  a(href='javascript:void(0)', target='_blank')
-                        //    i.material-icons.md-18.md-light language
-                        //    |  Español - España
+                        a#language-btn.abutton(href='javascript:void(0)', target='_blank')
+                            i.material-icons.md-18 language
+                            |  English - US
+                        #languageDropdown.dropdown-content
+                            a(href='javascript:void(0)', target='_blank' data-language='en-us') English - US
+                            a(href='javascript:void(0)', target='_blank' data-language='en-pi') Pirate Speak - The Seven Seas
+                            a(href='javascript:void(0)', target='_blank' data-language='es-es') Español - España
+                            a(href='javascript:void(0)', target='_blank' data-language='es-es') Català (Valencià) - País Valencià
 
                         a.right.abutton(href='javascript:void(0)', target='_blank', data-translate='help')
                         if(config.get('selectedProfile'))
-                            a.right.abutton(href='javascript:void(0)', target='_blank') #{config.get('selectedProfile').name}
+                            a#profile-btn.right.abutton(href='javascript:void(0)', target='_blank') #{config.get('selectedProfile').name}
                                 i.material-icons.md-18 arrow_drop_down
-                        else
-                            a.right.abutton(href='javascript:void(0)', target='_blank') Unknown
-                                i.material-icons.md-18 arrow_drop_down
+                            #profileDropdown.dropdown-content
+                                a(href='javascript:void(0)', target='_blank') Log out
 
-                        block main
+                    block main
                     .footer
                         block footer
                         p#version
                         img.logo(width='28px', height='28px', src='../resources/images/logo.webp')
                         p.logo Litecraft
-block scripts
+                    block scripts
