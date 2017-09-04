@@ -83,10 +83,9 @@ $(document).ready(() => {
         remote.getCurrentWindow().close()
     })
 
-    body.on('webkitAnimationEnd oanimationend msAnimationEnd animationend', '#login-form', function (e) {
+    body.on('webkitAnimationEnd oanimationend msAnimationEnd animationend', '#login-form', function () {
         $('#login-form').delay(200).removeClass('ahashakeheartache')
     })
-
 
     checkInternet((isConnected) => {
         if (config.get('accessToken')) {
@@ -124,12 +123,12 @@ $(document).ready(() => {
 
     function requestContent(file) {
         history.pushState(null, null, file)
-        $('.content').load(file + ' .content-data')
-
-        window.setTimeout(() => {
-            $('#version').text(remote.app.getVersion())
-            translate()
-        }, 185)
+        $.ajax({
+            url: file,
+            success: (data) => {
+                $('.content').html($(data).find('.content').addBack('.content').children())
+            }
+        })
     }
 
     function doLogin(event) {
