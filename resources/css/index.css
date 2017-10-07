@@ -1,337 +1,339 @@
 @font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Roboto'), local('Roboto'), url('../fonts/Roboto-Regular.ttf') format('truetype');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto'), url('../fonts/Roboto-Regular.ttf') format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
 
 @font-face {
-    font-family: 'Material Icons';
-    font-style: normal;
-    font-weight: 400;
-    src: url('../fonts/MaterialIcons-Regular.ttf') format('truetype');
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/MaterialIcons-Regular.ttf') format('truetype');
 }
 
-html,
+html, body {
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Roboto', 'San Francisco', 'Helvetica Neue', 'Lucida Grande', sans-serif;
+}
+
 body {
-    height: 100%;
-    overflow: hidden;
-    font-family: 'Roboto', 'San Francisco', 'Helvetica Neue', 'Lucida Grande', sans-serif;
+  -webkit-user-select: none;
+  margin: 0;
+  background: #2196f3;
+  box-shadow: inset 0 0 1em rgba(0, 0, 0, 0.2);
 }
 
-body {
-    -webkit-user-select: none;
-    margin: 0;
-    background: #2196f3;
-    box-shadow: inset 0 0 1em rgba(0, 0, 0, 0.2);
-}
-
-body::before,
-body::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+body::before, body::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 body::before {
-    mix-blend-mode: overlay;
-    z-index: -2;
-    background: linear-gradient(rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25));
+  mix-blend-mode: overlay;
+  z-index: -2;
+  background: linear-gradient(rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25));
 }
 
 body::after {
-    mix-blend-mode: overlay;
-    opacity: 0.05;
-    z-index: -1;
-    background: url("../images/noise.png");
+  mix-blend-mode: overlay;
+  opacity: 0.05;
+  z-index: -1;
+  background: url("../images/noise.png");
 }
 
 @media (-webkit-min-device-pixel-ratio: 2) {
-    body::after {
-        background-size: 50px 50px;
-    }
+  body::after {
+    background-size: 50px 50px;
+  }
 }
 
 .app-title {
-    -webkit-app-region: drag;
-    width: 100%;
-    height: 30px;
-    text-align: right;
-    line-height: 30px;
-    vertical-align: middle;
+  -webkit-app-region: drag;
+  width: 100%;
+  height: 30px;
+  text-align: right;
+  line-height: 30px;
+  vertical-align: middle;
 }
 
 .app-title p {
-    width: 100%;
-    position: absolute;
-    text-align: center;
-    top: 0;
-    margin-top: 0;
-    font-size: 14px;
-    font-weight: 700;
-    color: white;
-    z-index: -1;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  margin-top: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  z-index: -1;
 }
 
 .app-title a .material-icons {
-    -webkit-app-region: no-drag;
-    margin-right: 6px;
-    margin-top: 6px;
+  -webkit-app-region: no-drag;
+  margin-right: 6px;
+  margin-top: 6px;
 }
 
 .right {
-    float: right;
+  float: right;
 }
 
 .language {
-    background: black;
-    height: 30px;
-    vertical-align: middle;
-    line-height: 30px;
+  background: black;
+  height: 30px;
+  vertical-align: middle;
+  line-height: 30px;
 }
 
 .language a {
-    text-decoration: none;
-    font-size: 14px;
-    padding-left: 6px;
-    padding-right: 6px;
-    color: white;
+  text-decoration: none;
+  font-size: 14px;
+  padding-left: 6px;
+  padding-right: 6px;
+  color: white;
 }
 
 .language a .material-icons {
-    vertical-align: text-bottom;
+  vertical-align: text-bottom;
 }
 
 .footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 40px;
-    background: black;
-    color: rgba(255, 255, 255, 0.45);
-    font-size: 11px;
-    font-family: 'Roboto', 'San Francisco', 'Helvetica Neue', 'Lucida Grande', sans-serif;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: black;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 11px;
+  font-family: 'Roboto', 'San Francisco', 'Helvetica Neue', 'Lucida Grande', sans-serif;
 }
 
 .footer p {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding-left: 6px;
-    padding-bottom: 6px;
-    margin-bottom: 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding-left: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 0;
 }
 
 .abutton {
-    display: inline-block;
-    color: white;
-    cursor: pointer;
-    padding: 0 6px;
-    height: 30px;
+  display: inline-block;
+  color: white;
+  cursor: pointer;
+  padding: 0 6px;
+  height: 30px;
 }
 
 .abutton:hover {
-    color: lightgray;
+  color: lightgray;
 }
 
 .abutton.active {
-    color: black;
-    background-color: white;
+  color: black;
+  background-color: white;
 }
 
 .dropdown-content {
-    position: absolute;
-    top: 60px;
-    display: none;
-    background-color: white;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    z-index: 1;
+  position: absolute;
+  top: 60px;
+  display: none;
+  background-color: white;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 #languageDropdown.dropdown-content {
-    overflow-y: scroll;
-    height: 245px;
+  overflow-y: scroll;
+  height: 245px;
 }
 
 #languageDropdown.dropdown-content::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
-    background-color: #F5F5F5;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+  background-color: #F5F5F5;
 }
 
 #languageDropdown.dropdown-content::-webkit-scrollbar {
-    width: 5px;
-    background-color: #F5F5F5;
+  width: 5px;
+  background-color: #F5F5F5;
 }
 
 #languageDropdown.dropdown-content::-webkit-scrollbar-thumb {
-    background-color: #000000;
+  background-color: #000000;
 }
 
 .dropdown-content a {
-    color: black;
-    padding: 2px 6px;
-    text-decoration: none;
-    display: block;
-    font-size: 14px;
+  color: black;
+  padding: 2px 6px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
 }
 
 #languageDropdown.dropdown-content a {
-    width: 210px;
+  width: 210px;
 }
 
 #profileDropdown.dropdown-content a {
-    width: 85px;
+  width: 85px;
 }
 
 .dropdown-content a:hover {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 }
 
 #profileDropdown.dropdown-content {
-    right: 0;
+  right: 0;
 }
 
 .center {
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .show {
-    display: block !important;
+  display: block !important;
 }
 
 p.logo {
-    color: white;
-    width: auto;
-    font-size: 20px;
-    font-weight: 700;
-    position: fixed;
-    right: 6px;
-    bottom: 1px;
+  color: white;
+  width: auto;
+  font-size: 20px;
+  font-weight: 700;
+  position: fixed;
+  right: 6px;
+  bottom: 1px;
+}
+
+img {
+  -webkit-user-drag: none;
 }
 
 img.logo {
-    position: fixed;
-    right: 84px;
-    bottom: 6px;
-    vertical-align: middle;
+  position: fixed;
+  right: 84px;
+  bottom: 6px;
+  vertical-align: middle;
 }
 
 .content, .content-data {
-    height: 100%;
+  height: 100%;
 }
 
 .login-page {
-    /*width: 360px;
+  /*width: 360px;
     padding: 8% 0 0;
     margin: auto;*/
-    position: relative;
-    float: left;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: relative;
+  float: left;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 .form {
-    position: relative;
-    background: #FFFFFF;
-    max-width: 360px;
-    margin: 0 auto 135px;
-    padding: 16px 35px;
-    text-align: center;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  position: relative;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 135px;
+  padding: 16px 35px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
 .form input {
-    outline: 0;
-    background: #f2f2f2;
-    width: 100%;
-    border: 0;
-    margin: 0 0 15px;
-    padding: 15px;
-    box-sizing: border-box;
-    font-size: 14px;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
 }
 
 .form button, .form input[type=submit] {
-    text-transform: uppercase;
-    outline: 0;
-    background: #4CAF50;
-    width: 100%;
-    border: 0;
-    padding: 15px;
-    color: #FFFFFF;
-    font-size: 14px;
-    cursor: pointer;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  cursor: pointer;
 }
 
 .form button:hover, .form button:active, .form button:focus {
-    background: #43A047;
+  background: #43A047;
 }
 
 .form .message {
-    margin: 15px 0 0;
-    color: #b3b3b3;
-    font-size: 12px;
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
 }
 
 .form .message a {
-    color: #4CAF50;
-    text-decoration: none;
+  color: #4CAF50;
+  text-decoration: none;
 }
 
 .material-icons {
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px;
-    display: inline-block;
-    line-height: 1;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    white-space: nowrap;
-    direction: ltr;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 .material-icons.md-18 {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .material-icons.md-24 {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 .material-icons.md-36 {
-    font-size: 36px;
+  font-size: 36px;
 }
 
 .material-icons.md-48 {
-    font-size: 48px;
+  font-size: 48px;
 }
 
 .material-icons.md-dark {
-    color: rgba(0, 0, 0, 0.54);
+  color: rgba(0, 0, 0, 0.54);
 }
 
 .material-icons.md-light {
-    color: rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 1);
 }

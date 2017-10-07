@@ -1,3 +1,166 @@
 .footer {
-    height: 80px;
+  height: 80px;
+}
+
+.avatar {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  margin-top: -72px;
+  margin-left: -72px;
+  background: url(../images/avatar_background.jpg) no-repeat;
+  background-size: cover;
+  height: 144px;
+  width: 144px;
+  border-radius: 72px;
+  border-style: inset;
+  border-color: white;
+  overflow: hidden;
+}
+
+.avatar img {
+  padding: 10px;
+  padding-top: 30px;
+}
+
+.name {
+  text-align: center;
+  position: absolute;
+  top: 45.5%;
+  margin-top: -10px;
+  width: 100%;
+  line-height: 20px;
+  height: 20px;
+  font-size: 20px;
+  color: white;
+}
+
+.email {
+  text-align: center;
+  position: absolute;
+  top: 49%;
+  margin-top: -10px;
+  width: 100%;
+  line-height: 20px;
+  height: 20px;
+  font-size: 13px;
+  color: lightgray;
+}
+
+.play-button {
+  position: absolute;
+  top: 88.5%;
+  left: 50%;
+  text-align: center;
+  margin-top: -31px;
+  margin-left: -90px;
+  width: 150px;
+  text-transform: uppercase;
+  outline: 0;
+  z-index: 1;
+  background: #4CAF50;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.selectionWindow {
+  position: absolute;
+  top: 88.5%;
+  left: 50%;
+  margin-top: -187px;
+  margin-left: -200px;
+  width: 400px;
+  height: 374px;
+}
+
+.windowFrame {
+  height: 28px;
+  align-items: center;
+  background-color: #c4cad0;
+  border-radius: 10px 10px 0 0;
+}
+
+.frameButton {
+  display: inline-block;
+  margin-top: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-left: 9px;
+}
+
+.red {
+  background-color: #f96256;
+  border: 1px solid #f65549;
+}
+
+.yellow {
+  background-color: #fdbc3d;
+  border: 1px solid #ffb524;
+}
+
+.green {
+  background-color: #33c948;
+  border: 1px solid #2dbb41;
+}
+
+.windowBody {
+  height: 346px;
+  padding: 30px 0;
+  border-radius: 0 0 4px 4px;
+  background-color: #616161;
+  box-shadow: 0 50px 100px rgba(50, 50, 93, .15), 0 15px 35px rgba(50, 50, 93, .2), 0 5px 15px rgba(0, 0, 0, .12);
+}
+
+#version-btn {
+  text-align: center;
+  position: absolute;
+  top: 22.5%;
+  left: 50%;
+  margin-top: -16px;
+  margin-left: -90px;
+  height: 32px;
+  width: 163px;
+  display: inline-block;
+  color: white;
+  cursor: pointer;
+  padding: 0 6px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 18px;
+  outline: 0;
+  background: #757575;
+  padding: 8px;
+  color: #FFFFFF;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#version-btn .material-icons {
+  vertical-align: middle;
+}
+
+#version-btn:hover {
+  color: lightgray;
+}
+
+#version-btn.active {
+  color: black;
+  background-color: white;
+}
+
+.selected-version {
+  text-align: center;
+  position: absolute;
+  top: 39%;
+  margin-top: -10px;
+  width: 100%;
+  line-height: 20px;
+  height: 20px;
+  color: lightgray;
+  font-size: 13px;
 }

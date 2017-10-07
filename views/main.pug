@@ -5,7 +5,23 @@ block css
 
 block main
     .container
-        p You're logged in!
+        p.name #{config.get('selectedProfile').name}
+        p.email #{config.get('username')}
+        .avatar
+            img(src='https://minotar.net/armor/bust/raulsmail/125.png')
+        .selectionWindow
+          .windowFrame
+            .frameButton.red
+            .frameButton.yellow
+            .frameButton.green
+          .windowBody
+                p.selected-version Selected Version: 1.0 BETA
+                a#version-btn(href='javascript:void(0)', target='_blank')
+                    |  Select version...
+                    i.material-icons.md-36 arrow_drop_up
+                #versionDropdown.dropdown-content
+                    a(href='javascript:void(0)', target='_blank' data-version='1.0') 1.0
+        a.play-button(href='javascript:void(0);', target='_blank') Play
 
 block scripts
     script(type='text/javascript', src='../resources/js/onLoad.js')
