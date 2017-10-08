@@ -16,6 +16,7 @@
   border-style: inset;
   border-color: white;
   overflow: hidden;
+  box-shadow: 0 50px 100px rgba(50, 50, 93, .15), 0 15px 35px rgba(50, 50, 93, .2), 0 5px 15px rgba(0, 0, 0, .12);
 }
 
 .avatar img {
@@ -26,25 +27,28 @@
 .name {
   text-align: center;
   position: absolute;
-  top: 45.5%;
+  top: 46.5%;
   margin-top: -10px;
   width: 100%;
   line-height: 20px;
   height: 20px;
   font-size: 20px;
   color: white;
+  z-index: 1;
+  text-shadow: 0 0 3px rgba(0, 0, 0, .15), 0 0 5px rgba(0, 0, 0, .2), 0 0 3px rgba(0, 0, 0, .12);
 }
 
 .email {
   text-align: center;
   position: absolute;
-  top: 49%;
+  top: 50%;
   margin-top: -10px;
   width: 100%;
   line-height: 20px;
   height: 20px;
   font-size: 13px;
   color: lightgray;
+  text-shadow: 0 0 3px rgba(0, 0, 0, .15), 0 0 5px rgba(0, 0, 0, .2), 0 0 3px rgba(0, 0, 0, .12);
 }
 
 .play-button {
@@ -52,19 +56,23 @@
   top: 88.5%;
   left: 50%;
   text-align: center;
-  margin-top: -31px;
+  margin-top: -35px;
   margin-left: -90px;
+  line-height: 40px;
   width: 150px;
+  height: 40px;
   text-transform: uppercase;
   outline: 0;
   z-index: 1;
   background: #4CAF50;
   padding: 15px;
   color: #FFFFFF;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 700;
   cursor: pointer;
   text-decoration: none;
+  font-family: 'Press Start 2P';
+  box-shadow: 0 50px 100px rgba(0, 0, 0, .15), 0 15px 35px rgba(0, 0, 0, .2), 0 5px 15px rgba(0, 0, 0, .12);
 }
 
 .selectionWindow {
@@ -156,7 +164,7 @@
 .selected-version {
   text-align: center;
   position: absolute;
-  top: 39%;
+  top: 36%;
   margin-top: -10px;
   width: 100%;
   line-height: 20px;

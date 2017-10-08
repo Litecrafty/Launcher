@@ -8,7 +8,7 @@ block main
         p.name #{config.get('selectedProfile').name}
         p.email #{config.get('username')}
         .avatar
-            img(src='https://minotar.net/armor/bust/raulsmail/125.png')
+            img(src='../resources/images/default_avatar.png')
         .selectionWindow
           .windowFrame
             .frameButton.red
@@ -25,3 +25,4 @@ block main
 
 block scripts
     script(type='text/javascript', src='../resources/js/onLoad.js')
+    script(type='text/javascript', src='../resources/js/main.js')
