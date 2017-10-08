@@ -131,6 +131,7 @@ body::after {
   padding-left: 6px;
   padding-bottom: 6px;
   margin-bottom: 0;
+  cursor: default;
 }
 
 .abutton {
@@ -226,6 +227,7 @@ p.logo {
   position: fixed;
   right: 6px;
   bottom: 1px;
+  cursor: pointer;
 }
 
 img {
@@ -237,6 +239,7 @@ img.logo {
   right: 84px;
   bottom: 6px;
   vertical-align: middle;
+  cursor: pointer;
 }
 
 .content, .content-data {
@@ -344,4 +347,32 @@ h1, h2, h3, h4, h5, h6 {
 
 .material-icons.md-light {
   color: rgba(255, 255, 255, 1);
+}
+
+.fadeOut {
+  opacity: 0;
+  -webkit-animation: fadeOut 1.25s;
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeIn {
+  opacity: 1;
+  -webkit-animation: fadeIn 1.25s;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

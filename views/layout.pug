@@ -26,11 +26,12 @@ html
                             a(href='javascript:void(0)', target='_blank' data-language='es-es') Español - España
                             a(href='javascript:void(0)', target='_blank' data-language='es-es') Català (Valencià) - País Valencià
 
-                        a.right.abutton(href='javascript:void(0)', target='_blank', data-translate='help')
+                        a.right.abutton(href='https://www.google.com', target='_blank', data-translate='help')
                         if(config.get('selectedProfile'))
                             a#profile-btn.right.abutton(href='javascript:void(0)', target='_blank') #{config.get('selectedProfile').name}
                                 i.material-icons.md-18 arrow_drop_down
                             #profileDropdown.dropdown-content
+                                a(href='javascript:void(0)', target='_blank') Settings
                                 a(href='javascript:void(0)', target='_blank') Log out
 
                     block main

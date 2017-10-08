@@ -35,6 +35,7 @@
   font-size: 20px;
   color: white;
   z-index: 1;
+  cursor: default;
   text-shadow: 0 0 3px rgba(0, 0, 0, .15), 0 0 5px rgba(0, 0, 0, .2), 0 0 3px rgba(0, 0, 0, .12);
 }
 
@@ -48,6 +49,7 @@
   height: 20px;
   font-size: 13px;
   color: lightgray;
+  cursor: default;
   text-shadow: 0 0 3px rgba(0, 0, 0, .15), 0 0 5px rgba(0, 0, 0, .2), 0 0 3px rgba(0, 0, 0, .12);
 }
 
@@ -90,6 +92,7 @@
   align-items: center;
   background-color: #c4cad0;
   border-radius: 10px 10px 0 0;
+  cursor: default;
 }
 
 .frameButton {
@@ -171,4 +174,5 @@
   height: 20px;
   color: lightgray;
   font-size: 13px;
+  cursor: default;
 }
