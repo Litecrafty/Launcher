@@ -1,7 +1,7 @@
 # Launcher
 [![Discord](https://img.shields.io/discord/371055566480605184.svg)]()
 
-<img src="http://i.imgur.com/hFYg3Ju.png" width="600">
+<img src="http://i.imgur.com/hFYg3Ju.png" width="400">
 
 [Open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) [Litecraft](https://github.com/Litecrafty/Litecraft) Launcher.
 
@@ -10,7 +10,7 @@
 - User skin shows up.
 - Compiles!
 
-# Features that Litecraft will have
+# Features that Litecraft Launcher will have
 - Language system.
 - Logout button.
 - Version chooser.
