@@ -17,6 +17,7 @@ const dictionary = {
 const langs = ['en', 'es', 'ess']
 let current_lang_index = 0
 let current_lang = langs[current_lang_index]
+let doingLogin = false
 
 window.change_lang = function() {
   current_lang_index = ++current_lang_index % 3
@@ -140,36 +141,39 @@ $(document).ready(() => {
 
   function doLogin(event) {
     event.preventDefault()
+    if (!doingLogin) {
+      doingLogin = true
+      console.log('Trying to login...')
 
-    console.log('Trying to login...')
+      let user = $('#user')
+      let password = $('#password')
 
-    let user = $('#user')
-    let password = $('#password')
+      user.prop('disabled', true)
+      password.prop('disabled', true)
 
-    user.prop('disabled', true)
-    password.prop('disabled', true)
+      ygg.auth({
+        user: user.val(),
+        pass: password.val()
+      }, (err, data) => {
+        user.prop('disabled', false)
+        password.prop('disabled', false)
 
-    ygg.auth({
-      user: user.val(),
-      pass: password.val()
-    }, (err, data) => {
-      user.prop('disabled', false)
-      password.prop('disabled', false)
+        if (err) {
+          doingLogin = false
+          console.error(err)
+          $('#login-form').addClass('ahashakeheartache')
+          return
+        }
+        config.set('accessToken', data.accessToken)
+        config.set('clientToken', data.clientToken)
+        config.set('username', user.val())
 
-      if (err) {
-        console.error(err)
-        $('#login-form').addClass('ahashakeheartache')
-        return
-      }
-      config.set('accessToken', data.accessToken)
-      config.set('clientToken', data.clientToken)
-      config.set('username', user.val())
-
-      config.set('availableProfiles', data.availableProfiles)
-      config.set('selectedProfile', data.selectedProfile)
-      console.log('Logged in successfully!')
-      requestContent('main.pug')
-    })
+        config.set('availableProfiles', data.availableProfiles)
+        config.set('selectedProfile', data.selectedProfile)
+        console.log('Logged in successfully!')
+        requestContent('main.pug')
+      })
+    }
   }
 
   function checkInternet(cb) {

@@ -48,8 +48,10 @@ app.on('ready', () => {
         maxHeight: 600,
         fullscreen: false,
         resizable: false,
+        maximizable: false,
         backgroundColor: '#2196F3',
-        frame: false
+        frame: false,
+        titleBarStyle: 'hiddenInset'
     })
 
     mainWindow.$ = $

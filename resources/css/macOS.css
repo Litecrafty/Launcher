@@ -1,0 +1,11 @@
+#minimize,#close {
+  display: none;
+}
+
+.app-title {
+  line-height: 38px;
+}
+
+.language {
+  margin-top: 8px;
+}

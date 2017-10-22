@@ -3,6 +3,8 @@ html
     head
         title Litecraft
         link(rel='stylesheet', href='../resources/css/index.css')
+        if(process.platform === 'darwin')
+            link(rel='stylesheet', href='../resources/css/macOS.css')
         meta(charset='UTF-8')
         script(type='text/javascript', src='../resources/js/index.js')
     body
