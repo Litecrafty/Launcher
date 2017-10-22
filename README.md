@@ -1,5 +1,5 @@
 # Launcher
-[![Discord](https://img.shields.io/discord/371055566480605184.svg)]()
+[![Discord](https://img.shields.io/discord/371055566480605184.svg)](https://discord.gg/qKjuDxx)
 
 <img src="http://i.imgur.com/hFYg3Ju.png" width="400">
 
