@@ -16,16 +16,22 @@ const getLatestVersion = function () {
     //TODO: Allow to select alpha...
     const latest = config.get('versions').latest[0]
 
-    config.get('versions').versions.filter(function (v) {
+    return config.get('versions').versions.filter(function (v) {
         return v.version == latest
-    })
+    })[0]
 }
 
-const selectedVersion = function () {
+const getSelectedVersion = function () {
     if (!config.get('selectedVersion')) {
-        config.set('selectedVersion', getLatestVersion())
+        config.set('selectedVersion', config.get('versions').latest[0])
     }
     return config.get('selectedVersion')
 }
 
-module.exports = { updateVersionCache, getLatestVersion, selectedVersion }
+const getSelectedVersionWithDetails = function () {
+    return config.get('versions').versions.filter(function (v) {
+        return v.version == getSelectedVersion()
+    })[0]
+}
+
+module.exports = { updateVersionCache, getLatestVersion, getSelectedVersion, getSelectedVersionWithDetails }

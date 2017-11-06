@@ -1,3 +1,5 @@
+'use strict'
+
 var img = new Image(125, 125)
 img.src = 'https://minotar.net/armor/bust/' + config.get('selectedProfile').name + '/125.png'
 if (img.complete) {

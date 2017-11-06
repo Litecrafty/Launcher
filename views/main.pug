@@ -15,14 +15,15 @@ block main
             .frameButton.yellow
             .frameButton.green
           .windowBody
-                p.selected-version Selected Version: 1.0 BETA
+                p.selected-version
                 a#version-btn(href='javascript:void(0)', target='_blank')
                     |  Select version...
                     i.material-icons.md-36 arrow_drop_up
                 #versionDropdown.dropdown-content
                     a(href='javascript:void(0)', target='_blank' data-version='1.0') 1.0
         a.play-button(href='javascript:void(0);', target='_blank') Play
-
+        
 block scripts
     script(type='text/javascript', src='../resources/js/onLoad.js')
     script(type='text/javascript', src='../resources/js/main.js')
+    

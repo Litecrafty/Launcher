@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+'use strict'
 
 const $ = require('jquery')
 const versions = require('../resources/js/versions.js')
@@ -184,6 +185,7 @@ $(document).ready(() => {
             } else {
                 cb(true)
                 versions.updateVersionCache()
+                console.log(versions.getSelectedVersion());
             }
         })
     }
