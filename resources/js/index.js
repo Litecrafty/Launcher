@@ -8,8 +8,9 @@ const {
 } = require('electron')
 const config = require('../config.js')
 const ygg = require('litecraft-yggdrasil')({})
+let doingLogin = false
 
-const dictionary = {
+/*const dictionary = {
     'help': {
         'en': 'Help',
         'es': 'Ayuda',
@@ -19,7 +20,6 @@ const dictionary = {
 const langs = ['en', 'es', 'ess']
 let current_lang_index = 0
 let current_lang = langs[current_lang_index]
-let doingLogin = false
 
 window.change_lang = function () {
     current_lang_index = ++current_lang_index % 3
@@ -32,7 +32,7 @@ function translate() {
         let key = $(this).data('translate')
         $(this).html(dictionary[key][current_lang] || 'N/A')
     })
-}
+}*/
 
 function dropdownList() {
     if (document.getElementById('languageDropdown')) {
@@ -190,7 +190,7 @@ $(document).ready(() => {
         })
     }
 
-    translate()
+    //translate()
 })
 
 $(window).on('beforeunload', (e) => {
