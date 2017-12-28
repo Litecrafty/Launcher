@@ -29,8 +29,15 @@
     "electron": "^1.6.11",
     "electron-config": "^1.0.0",
     "electron-pug": "^1.5.1",
+    "es6-promisify": "^5.0.0",
     "eslint": "^4.5.0",
     "jquery": "^3.2.1",
-    "litecraft-yggdrasil": "^2.0.2"
+    "litecraft-yggdrasil": "^2.0.2",
+    "md5-file": "^3.2.3",
+    "mkdirp": "^0.5.1",
+    "mz": "^2.7.0",
+    "promise-queue": "^2.2.3",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
   }
 }

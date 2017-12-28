@@ -23,21 +23,15 @@ html
                             i.material-icons.md-18 language
                             |  English - US
                         #languageDropdown.dropdown-content
-                            a(href='javascript:void(0)', target='_blank' data-language='en-us') English - US
-                            a(href='javascript:void(0)', target='_blank' data-language='en-us') More languages coming soon!
-                            //- a(href='javascript:void(0)', target='_blank' data-language='en-pi') Pirate Speak - The Seven Seas
-                            //- a(href='javascript:void(0)', target='_blank' data-language='es-es') Español - España
-                            //- a(href='javascript:void(0)', target='_blank' data-language='es-es') Català (Valencià) - País Valencià
-
-                        a.right.abutton(href='https://www.google.com', target='_blank') Help
-                        //- , data-translate='help')
+                            a(href='javascript:void(0)', target='_blank') English - US
+                            a(href='javascript:void(0)', target='_blank') More languages coming soon!
+                        a.right.abutton(href='https://discord.gg/qKjuDxx', target='_blank') Help
                         if(config.get('selectedProfile'))
                             a#profile-btn.right.abutton(href='javascript:void(0)', target='_blank') #{config.get('selectedProfile').name}
                                 i.material-icons.md-18 arrow_drop_down
                             #profileDropdown.dropdown-content
                                 a(href='javascript:void(0)', target='_blank') Settings
                                 a(href='javascript:void(0)', target='_blank') Log out
-
                     block main
                     .footer
                         block footer

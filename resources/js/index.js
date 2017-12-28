@@ -8,31 +8,8 @@ const {
 } = require('electron')
 const config = require('../config.js')
 const ygg = require('litecraft-yggdrasil')({})
+const MinecraftDownload = require("../resources/js/minecraft_download")
 let doingLogin = false
-
-/*const dictionary = {
-    'help': {
-        'en': 'Help',
-        'es': 'Ayuda',
-        'ess': 'Ayudita'
-    }
-}
-const langs = ['en', 'es', 'ess']
-let current_lang_index = 0
-let current_lang = langs[current_lang_index]
-
-window.change_lang = function () {
-    current_lang_index = ++current_lang_index % 3
-    current_lang = langs[current_lang_index]
-    translate()
-}
-
-function translate() {
-    $('[data-translate]').each(function () {
-        let key = $(this).data('translate')
-        $(this).html(dictionary[key][current_lang] || 'N/A')
-    })
-}*/
 
 function dropdownList() {
     if (document.getElementById('languageDropdown')) {
@@ -56,6 +33,17 @@ function dropdownProfile() {
     }
 }
 
+function dropdownVersions() {
+    if (document.getElementById('versionsDropdown')) {
+        document.getElementById('versionsDropdown').classList.toggle('show')
+        if (document.getElementById('versionsDropdown').classList.contains('show')) {
+            document.getElementById('versions-btn').classList.add('active')
+        } else {
+            document.getElementById('versions-btn').classList.remove('active')
+        }
+    }
+}
+
 $(document).on('click', (event) => {
     if (!event.target.matches('#language-btn')) {
         let openDropdown = document.getElementById('languageDropdown')
@@ -71,6 +59,13 @@ $(document).on('click', (event) => {
             document.getElementById('profile-btn').classList.remove('active')
         }
     }
+    if (!event.target.matches('#versions-btn')) {
+        let openDropdown = document.getElementById('versionsDropdown')
+        if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show')
+            document.getElementById('versions-btn').classList.remove('active')
+        }
+    }
 })
 
 $(document).ready(() => {
@@ -78,6 +73,10 @@ $(document).ready(() => {
     let body = $('body')
     body.on('click', 'a#language-btn', dropdownList)
     body.on('click', 'a#profile-btn', dropdownProfile)
+    body.on('click', 'a#versions-btn', dropdownVersions)
+    body.on('click', 'a#play-btn', () => {
+      new MinecraftDownload(remote.app.getPath('userData')).getAllAssets('1.12')
+    });
     body.on('submit', '#login-form', doLogin)
     body.on('click', '#minimize', () => {
         remote.getCurrentWindow().minimize()
@@ -189,8 +188,6 @@ $(document).ready(() => {
             }
         })
     }
-
-    //translate()
 })
 
 $(window).on('beforeunload', (e) => {
