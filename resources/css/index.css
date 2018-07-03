@@ -323,6 +323,7 @@ h1, h2, h3, h4, h5, h6 {
   direction: ltr;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  pointer-events: none;
 }
 
 .material-icons.md-18 {

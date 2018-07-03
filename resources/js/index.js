@@ -3,12 +3,11 @@
 
 const $ = require('jquery')
 const versions = require('../resources/js/versions.js')
-const {
-    remote
-} = require('electron')
+const AssetsDownload = require("../resources/js/assetsDownload")
+const { remote } = require('electron')
 const config = require('../config.js')
 const ygg = require('litecraft-yggdrasil')({})
-const MinecraftDownload = require("../resources/js/minecraft_download")
+
 let doingLogin = false
 
 function dropdownList() {
@@ -46,25 +45,31 @@ function dropdownVersions() {
 
 $(document).on('click', (event) => {
     if (!event.target.matches('#language-btn')) {
+      if (document.getElementById('languageDropdown')) {
         let openDropdown = document.getElementById('languageDropdown')
         if (openDropdown.classList.contains('show')) {
             openDropdown.classList.remove('show')
             document.getElementById('language-btn').classList.remove('active')
         }
+      }
     }
     if (!event.target.matches('#profile-btn')) {
+      if (document.getElementById('profileDropdown')) {
         let openDropdown = document.getElementById('profileDropdown')
         if (openDropdown.classList.contains('show')) {
             openDropdown.classList.remove('show')
             document.getElementById('profile-btn').classList.remove('active')
         }
+      }
     }
     if (!event.target.matches('#versions-btn')) {
+      if (document.getElementById('versionsDropdown')) {
         let openDropdown = document.getElementById('versionsDropdown')
         if (openDropdown.classList.contains('show')) {
             openDropdown.classList.remove('show')
             document.getElementById('versions-btn').classList.remove('active')
         }
+      }
     }
 })
 
@@ -75,7 +80,7 @@ $(document).ready(() => {
     body.on('click', 'a#profile-btn', dropdownProfile)
     body.on('click', 'a#versions-btn', dropdownVersions)
     body.on('click', 'a#play-btn', () => {
-      new MinecraftDownload(remote.app.getPath('userData')).getAllAssets('1.12')
+      new AssetsDownload(remote.app.getPath('userData')).getAllAssets('1.12.2')
     });
     body.on('submit', '#login-form', doLogin)
     body.on('click', '#minimize', () => {

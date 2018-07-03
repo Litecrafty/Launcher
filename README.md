@@ -19,5 +19,5 @@
 
 # Compile
  - Download Node.js and install it.
- - Run `npm install && npm start` in a Terminal on the project folder.
+ - Run `npm i && npm start` in a Terminal on the project folder.
  - Profit! (You should now see our Launcher n.n)

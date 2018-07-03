@@ -13,3 +13,7 @@
 .dropdown-content {
     top: 68px;
 }
+
+#versionsDropdown.dropdown-content {
+  margin-top: -100px;
+}

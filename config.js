@@ -9,7 +9,7 @@ module.exports = new Config({
         clientToken: '',
         availableProfiles: [{}],
         selectedProfile: '',
-        lastUpdated: new Date() - (1000 * 60 * 24), // Mark version cache as invalid
+        lastUpdated: 0,
         versions: {},
         selectedVersion: null
     }

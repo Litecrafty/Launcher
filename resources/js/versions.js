@@ -7,6 +7,7 @@ const updateVersionCache = function () {
     if (new Date() - config.get('lastUpdated') > 1000 * 60 * 10) {
         $.get('https://litecrafty.github.io/website/versions.json', function (data) {
             config.set('versions', data)
+            config.set('lastUpdated', new Date().getTime())
         })
     }
 }
@@ -23,6 +24,7 @@ const getLatestVersion = function () {
 
 const getSelectedVersion = function () {
     if (!config.get('selectedVersion')) {
+        updateVersionCache()
         config.set('selectedVersion', config.get('versions').latest[0])
     }
     return config.get('selectedVersion')
