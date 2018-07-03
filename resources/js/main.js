@@ -1,3 +1,5 @@
+/*global config*/
+/*eslint no-undef: "error"*/
 'use strict'
 
 var img = new Image(125, 125)
