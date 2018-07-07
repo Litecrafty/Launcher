@@ -3,11 +3,7 @@
 const electron = require('electron')
 const $ = require('jquery')
 
-require('electron-pug')({
-    pretty: true
-}, {
-    config: require('./config')
-})
+const setupPug = require('electron-pug')
 
 const {
     app,
@@ -36,7 +32,9 @@ app.on('window-all-closed', () => {
     }
 })
 
-app.on('ready', () => {
+app.on('ready', async () => {
+    await setupPug({pretty: true}, {config: require('./config')})
+
     mainWindow = new BrowserWindow({
         show: false,
         title: app.getName(),
