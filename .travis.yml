@@ -2,14 +2,40 @@ language: node_js
 
 cache:
   directories:
-    - "node_modules"
+  - node_modules
 
 addons:
   apt:
     update: true
     packages:
-      - xvfb
-  
+    - xvfb
+
+before_install:
+# package-lock.json was introduced in npm@5
+- '[[ $(node -v) =~ ^v9.*$ ]] || npm install -g npm@latest' # skipped when using node 9
+- npm install -g greenkeeper-lockfile
+
 install:
-  - export DISPLAY=':99.0'
-  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+- export DISPLAY=':99.0'
+- Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+- npm install
+
+before_script:
+- greenkeeper-lockfile-update
+
+after_script:
+- greenkeeper-lockfile-upload
+
+after_success:
+- wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
+- chmod +x send.sh
+- "./send.sh success $WEBHOOK_URL"
+
+after_failure:
+- wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
+- chmod +x send.sh
+- "./send.sh failure $WEBHOOK_URL"
+
+env:
+  global:
+    secure: engxfhefX1uyc90/wPv+vH5wytmBttKIQJ1TVUJrZTw8JVOUO8kLodjpUXgBq/VZE6nH0IMTtDwpQPTalXb9Ygs3FYlhN79SeZWhzu/98D1MrPcXW3EYETWbBodpHxHt+btypwLXAf/uFnTDvghe2WZ2jbvuFnEhEB1WJlSLz0vKLae29ZqF8DQvukjQVjeAHZomJuAEh0G7myfN6hCo82Y0AiN62MAN1eN4gvgXbabGTUOxMLwwoRj5dWShVkxChO+88fu5HrrefzcxVYUJGjw6L3oQIrsb7bNImdw04JxC4XqQnnnqOLrnMKwVSh6z1+dQdjF78vWYV5ok4u6xf0+BL0uQYC/aFokQLnJgUBNS0/oD8JoquGadEyifRNvzcZGjhLrSauVH6HupY5tk6a4dUjvO5i6pJ3rohUtHIOR3BTdcU7Z7fP3er6BZfJo0vPb5ySOC2olwVcHMUhwF6PHPWU1pk0OU7Bjf4JKQ8SyGMJ3qQmgZecXn4pAMWutKPAwWAdk9LWiXhUpt6u58DGBkiedPha6NDZ90+fWg4diRDhHhvBR7cmLtcynLGhwqLSrpV9SG9r43Uk2c1WBDf7NyCqCovVOVFW53jOE9XKO/hZFx9qvuXUXlm8RyIejm3jQjExz8+Fq4MT1ymqK2E0SNPeBIXEBcv3ELIpAjt14=
