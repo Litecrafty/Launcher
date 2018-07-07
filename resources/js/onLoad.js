@@ -1,5 +1,4 @@
 /*global remote versions*/
-/*eslint no-undef: "error"*/
 'use strict'
 
 $(document).ready(() => {

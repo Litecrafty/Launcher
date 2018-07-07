@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 'use strict'
 
 const $ = require('jquery')
@@ -80,6 +79,7 @@ $(document).ready(() => {
     body.on('click', 'a#profile-btn', dropdownProfile)
     body.on('click', 'a#versions-btn', dropdownVersions)
     body.on('click', 'a#play-btn', () => {
+        // TODO: Get Minecraft version to download from Litecraft's web API
         new AssetsDownload(remote.app.getPath('userData')).getAllAssets('1.12.2')
     })
     body.on('submit', '#login-form', doLogin)

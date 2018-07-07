@@ -1,42 +1,45 @@
 {
-  "name": "litecraft-launcher",
-  "productName": "Litecraft",
-  "version": "0.1.0",
-  "description": "Electron desktop app for launching the Litecraft client.",
-  "main": "index.js",
-  "scripts": {
-    "start": "electron ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/raulsmartin/Launcher.git"
-  },
-  "keywords": [
-    "client",
-    "minecraft",
-    "electron",
-    "fast",
-    "lite",
-    "from-scratch"
-  ],
-  "author": "raulsmartin",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/raulsmartin/Launcher/issues"
-  },
-  "homepage": "https://github.com/raulsmartin/Launcher#readme",
-  "devDependencies": {
-    "electron": "^2.0.4",
-    "eslint": "^5.0.1"
-  },
-  "dependencies": {
-    "assert": "^1.4.1",
-    "axios": "^0.18.0",
-    "electron-config": "^1.0.0",
-    "electron-pug": "^2.0.0",
-    "jquery": "^3.3.1",
-    "litecraft-yggdrasil": "^2.0.3",
-    "md5-file": "^4.0.0",
-    "mkdirp": "^0.5.1"
-  }
+    "name": "litecraft-launcher",
+    "productName": "Litecraft",
+    "version": "0.1.0",
+    "description": "Electron desktop app for launching the Litecraft client.",
+    "main": "index.js",
+    "scripts": {
+        "start": "node_modules/.bin/electron .",
+        "test": "node node_modules/mocha/bin/mocha -R spec",
+        "lint": "node node_modules/eslint/bin/eslint -f tap ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Litecrafty/Launcher.git"
+    },
+    "keywords": [
+        "client",
+        "minecraft",
+        "electron",
+        "fast",
+        "lite",
+        "from-scratch"
+    ],
+    "author": "raulsmartin",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/Litecrafty/Launcher/issues"
+    },
+    "homepage": "https://github.com/Litecrafty/Launcher#readme",
+    "devDependencies": {
+        "electron": "^2.0.4",
+        "eslint": "^5.0.1",
+        "mocha": "^5.2.0"
+    },
+    "dependencies": {
+        "assert": "^1.4.1",
+        "axios": "^0.18.0",
+        "electron-config": "^1.0.0",
+        "electron-pug": "^2.0.0",
+        "jquery": "^3.3.1",
+        "litecraft-yggdrasil": "^2.0.3",
+        "md5-file": "^4.0.0",
+        "mkdirp": "^0.5.1"
+    }
 }
