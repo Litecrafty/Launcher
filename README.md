@@ -1,6 +1,6 @@
 # Launcher
 [![Discord](https://img.shields.io/discord/371055566480605184.svg)](https://discord.gg/qKjuDxx)
-[![Build Status](https://travis-ci.org/Litecrafty/Launcher.svg?branch=master)](https://travis-ci.org/Litecrafty/Launcher)
+[![Build Status](https://travis-ci.org/Litecrafty/Launcher.svg?branch=master)](https://travis-ci.org/Litecrafty/Launcher) [![Greenkeeper badge](https://badges.greenkeeper.io/Litecrafty/Launcher.svg)](https://greenkeeper.io/)
 
 <img src="https://cdn.discordapp.com/attachments/377277794595635210/377277937902419968/687474703a2f2f692e696d6775722e636f6d2f68465967334a752e706e67.png" width="400">
 
