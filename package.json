@@ -28,8 +28,8 @@
     },
     "homepage": "https://github.com/Litecrafty/Launcher#readme",
     "devDependencies": {
-        "electron": "^2.0.4",
-        "eslint": "^5.0.1",
+        "electron": "^2.0.5",
+        "eslint": "^5.1.0",
         "mocha": "^5.2.0"
     },
     "dependencies": {

@@ -1,0 +1,193 @@
+.footer { height: 80px; }
+
+.avatar {
+  background: url('../images/avatar_background.jpg') no-repeat;
+  background-size: cover;
+  border-color: white;
+  border-radius: 72px;
+  border-style: inset;
+  box-shadow: 0 50px 100px rgba(50, 50, 93, .15), 0 15px 35px rgba(50, 50, 93, .2), 0 5px 15px rgba(0, 0, 0, .12);
+  height: 144px;
+  left: 50%;
+  margin-left: -72px;
+  margin-top: -72px;
+  overflow: hidden;
+  position: absolute;
+  top: 30%;
+  width: 144px;
+
+  img {
+    padding: 10px;
+    padding-top: 30px;
+  }
+}
+
+.name {
+  color: white;
+  cursor: default;
+  font-size: 20px;
+  height: 20px;
+  line-height: 20px;
+  margin-top: -10px;
+  position: absolute;
+  text-align: center;
+  text-shadow: 0 0 3px rgba(0, 0, 0, .15), 0 0 5px rgba(0, 0, 0, .2), 0 0 3px rgba(0, 0, 0, .12);
+  top: 46.5%;
+  width: 100%;
+  z-index: 1;
+}
+
+.email {
+  color: lightgray;
+  cursor: default;
+  font-size: 13px;
+  height: 20px;
+  line-height: 20px;
+  margin-top: -10px;
+  position: absolute;
+  text-align: center;
+  text-shadow: 0 0 3px rgba(0, 0, 0, .15), 0 0 5px rgba(0, 0, 0, .2), 0 0 3px rgba(0, 0, 0, .12);
+  top: 50%;
+  width: 100%;
+}
+
+#play-btn {
+  background: #4CAF50;
+  box-shadow: 0 50px 100px rgba(0, 0, 0, .15), 0 15px 35px rgba(0, 0, 0, .2), 0 5px 15px rgba(0, 0, 0, .12);
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: 'Press Start 2P';
+  font-size: 18px;
+  font-weight: 700;
+  height: 40px;
+  left: 50%;
+  line-height: 40px;
+  margin-left: -90px;
+  margin-top: -35px;
+  outline: 0;
+  padding: 15px;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  top: 88.5%;
+  width: 150px;
+  z-index: 1;
+}
+
+.selection-window {
+  height: 374px;
+  left: 50%;
+  margin-left: -200px;
+  margin-top: -187px;
+  position: absolute;
+  top: 88.5%;
+  width: 400px;
+}
+
+.window-frame {
+  align-items: center;
+  background-color: #c4cad0;
+  border-radius: 10px 10px 0 0;
+  cursor: default;
+  height: 28px;
+}
+
+.frame-button {
+  border-radius: 50%;
+  display: inline-block;
+  height: 12px;
+  margin-left: 9px;
+  margin-top: 8px;
+  width: 12px;
+}
+
+.red {
+  background-color: #f96256;
+  border: 1px solid #f65549;
+}
+
+.yellow {
+  background-color: #fdbc3d;
+  border: 1px solid #ffb524;
+}
+
+.green {
+  background-color: #33c948;
+  border: 1px solid #2dbb41;
+}
+
+.window-body {
+  background-color: #616161;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 50px 100px rgba(50, 50, 93, .15), 0 15px 35px rgba(50, 50, 93, .2), 0 5px 15px rgba(0, 0, 0, .12);
+  height: 346px;
+  padding: 30px 0;
+}
+
+#versions-btn {
+  background: #757575;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  height: 30px;
+  left: 50%;
+  line-height: 30px;
+  margin-left: -90px;
+  margin-top: -16px;
+  outline: 0;
+  padding: 8px;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  top: 22.5%;
+  width: 163px;
+  .material-icons { vertical-align: middle; }
+  &:hover { color: lightgray; }
+  &.active { background-color: gray; }
+}
+
+.selected-version {
+  color: lightgray;
+  cursor: default;
+  font-size: 13px;
+  height: 20px;
+  line-height: 20px;
+  margin-top: -10px;
+  position: absolute;
+  text-align: center;
+  top: 36%;
+  width: 100%;
+}
+
+#versionsDropdown.dropdown-content {
+  box-shadow: 0 -8px 16px 0 rgba(0, 0, 0, .2);
+  height: 100px;
+  left: 50%;
+  margin-left: -90px;
+  margin-top: -92px;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, .3);
+    background-color: #F5F5F5;
+  }
+
+  &::-webkit-scrollbar {
+    background-color: #F5F5F5;
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb { background-color: #000000; }
+
+  a {
+    text-align: center;
+    width: 162px;
+
+    &:hover {
+      background-color: gray;
+      color: white;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 extends layout
 
 block css
-    link(rel='stylesheet', href='../resources/css/main.css')
+    link(rel='stylesheet', href='../resources/css/main.min.css')
 
 block main
     .container
@@ -9,12 +9,12 @@ block main
         p.email #{config.get('username')}
         .avatar
             img(src='../resources/images/default_avatar.png')
-        .selectionWindow
-          .windowFrame
-            .frameButton.red
-            .frameButton.yellow
-            .frameButton.green
-          .windowBody
+        .selection-window
+          .window-frame
+            .frame-button.red
+            .frame-button.yellow
+            .frame-button.green
+          .window-body
                 p.selected-version
                 a#versions-btn(href='javascript:void(0)', target='_blank')
                     |  Select version...

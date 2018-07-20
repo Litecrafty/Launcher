@@ -129,8 +129,8 @@ $(document).ready(() => {
     })
 
     function requestContent(file) {
-        $('.content').removeClass('fadeIn')
-        $('.content').addClass('fadeOut')
+        $('.content').removeClass('fade-in')
+        $('.content').addClass('fade-out')
         history.pushState(null, null, file)
         $.ajax({
             url: file,
@@ -138,9 +138,9 @@ $(document).ready(() => {
                 /*while ($('.content').filter(':animated').length > 0) {
 
                 }*/
-                $('.content').removeClass('fadeOut')
+                $('.content').removeClass('fade-out')
                 $('.content').html($(data).find('.content').addBack('.content').children())
-                $('.content').addClass('fadeIn')
+                $('.content').addClass('fade-in')
             }
         })
     }

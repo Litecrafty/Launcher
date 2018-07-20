@@ -2,10 +2,11 @@ doctype html
 html
     head
         title Litecraft
-        link(rel='stylesheet', href='../resources/css/index.css')
+        link(rel='stylesheet', href='../resources/css/index.min.css')
         if(process.platform === 'darwin')
-            link(rel='stylesheet', href='../resources/css/macOS.css')
+            link(rel='stylesheet', href='../resources/css/macOS.min.css')
         meta(charset='UTF-8')
+        meta(http-equiv='Content-Security-Policy', content="default-src 'self' https://*; script-src 'self' 'unsafe-inline'")
         script(type='text/javascript', src='../resources/js/index.js')
     body
         .app-title#toolbar
