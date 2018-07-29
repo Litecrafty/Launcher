@@ -1,42 +1,5 @@
-doctype html
-html
-    head
-        title Litecraft
-        link(rel='stylesheet', href='../resources/css/index.min.css')
-        if(process.platform === 'darwin')
-            link(rel='stylesheet', href='../resources/css/macOS.min.css')
-        meta(charset='UTF-8')
-        meta(http-equiv='Content-Security-Policy', content="default-src 'self' https://*; script-src 'self' 'unsafe-inline'")
-        script(type='text/javascript', src='../resources/js/index.js')
-    body
-        .app-title#toolbar
-            a#minimize(href='javascript:void(0)', target='_blank')
-                i.material-icons.md-18.md-light remove
-            a#close(href='javascript:void(0);', target='_blank')
-                i.material-icons.md-18.md-light close
-            p.md-18 Litecraft
-        .content
-            .content-data
-                block css
-                block content
-                    .language
-                        a#language-btn.abutton(href='javascript:void(0)', target='_blank')
-                            i.material-icons.md-18 language
-                            |  English - US
-                        #languageDropdown.dropdown-content
-                            a(href='javascript:void(0)', target='_blank') English - US
-                            a(href='javascript:void(0)', target='_blank') More languages coming soon!
-                        a.right.abutton(href='https://discord.gg/qKjuDxx', target='_blank') Help
-                        if(config.get('selectedProfile'))
-                            a#profile-btn.right.abutton(href='javascript:void(0)', target='_blank') #{config.get('selectedProfile').name}
-                                i.material-icons.md-18 arrow_drop_down
-                            #profileDropdown.dropdown-content
-                                a(href='javascript:void(0)', target='_blank') Settings
-                                a(href='javascript:void(0)', target='_blank') Log out
-                    block main
-                    .footer
-                        block footer
-                        p#version
-                        img.logo(width='28px', height='28px', src='../resources/images/logo.apng')
-                        p.logo Litecraft
-                block scripts
+extends layout
+
+block content
+    .center
+        img.loading(width='150px', height='150px', src='../resources/images/logo.apng')
