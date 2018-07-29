@@ -6,15 +6,18 @@ block css
 block main
     .login-page
         .form
-            h1 Log In
-            h3 Use your Mojang account to log in
+            h1
+              |  Log In
+            h3
+              |  Use your Mojang account to log in
             form#login-form(name='do-login', action='')
                 input#user(placeholder="email or username", required=true)
                 input#password(type="password", placeholder="password", required=true)
                 input(type='submit', value='login')
             p.message
                 | Don't have an account?
-                a(href="https://minecraft.net/store/minecraft/#register")  Register one here!
+                a(href="https://minecraft.net/store/minecraft/#register")
+                  |  Register one here!
 
 block scripts
     script(type='text/javascript', src='../resources/js/onLoad.js')

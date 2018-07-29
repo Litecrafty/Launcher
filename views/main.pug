@@ -22,7 +22,8 @@ block main
                 #versionsDropdown.dropdown-content
                     each val in config.get('versions').versions
                         a(href='javascript:void(0)', target='_blank', data-version=val.version)= val.version + " " + val.type.toUpperCase()
-        a#play-btn(href='javascript:void(0);', target='_blank') Play
+        a#play-btn(href='javascript:void(0);', target='_blank')
+          |  Play
         
 block scripts
     script(type='text/javascript', src='../resources/js/onLoad.js')
