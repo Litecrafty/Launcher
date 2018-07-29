@@ -1,0 +1,3 @@
+files:
+  - source: /views
+    translation: /resources/lang/%locale%
