@@ -29,7 +29,7 @@
     "homepage": "https://github.com/Litecrafty/Launcher#readme",
     "devDependencies": {
         "electron": "^5.0.0",
-        "eslint": "^5.0.1",
+        "eslint": "^6.7.0",
         "mocha": "^5.2.0"
     },
     "dependencies": {
