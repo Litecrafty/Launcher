@@ -40,6 +40,6 @@
         "jquery": "^3.3.1",
         "litecraft-yggdrasil": "^2.0.3",
         "md5-file": "^4.0.0",
-        "mkdirp": "^0.5.1"
+        "mkdirp": "^1.0.2"
     }
 }
