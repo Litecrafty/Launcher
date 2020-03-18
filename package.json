@@ -30,7 +30,7 @@
     "devDependencies": {
         "electron": "^5.0.0",
         "eslint": "^5.0.1",
-        "mocha": "^5.2.0"
+        "mocha": "^7.1.1"
     },
     "dependencies": {
         "assert": "^1.4.1",
